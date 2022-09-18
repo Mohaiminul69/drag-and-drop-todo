@@ -21,7 +21,7 @@ const Home = () => {
         Taskify
       </h1>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <div className="h-fit mt-8 w-full flex justify-center">
+      <div className="h-fit mt-8 w-full flex justify-center px-8">
         <TodoList todos={todos} setTodos={setTodos} />
       </div>
     </div>
