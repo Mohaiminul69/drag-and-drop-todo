@@ -42,7 +42,7 @@ const TodoItem: React.FC<Props> = ({ todo, todos, setTodos }) => {
   return (
     <form
       onSubmit={(e) => handleEdit(e, todo.id)}
-      className="flex my-5 shadow-md shadow-black items-center w-72 h-12 bg-primary rounded-xl justify-between px-4 text-black"
+      className="flex hover:scale-105 transition duration-300 my-5 shadow-md shadow-black items-center w-72 h-12 bg-primary rounded-xl justify-between px-4 text-black"
     >
       {edit ? (
         <input
