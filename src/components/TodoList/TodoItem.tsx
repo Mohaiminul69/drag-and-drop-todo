@@ -43,13 +43,15 @@ const TodoItem: React.FC<Props> = ({ todo, todos, setTodos, index }) => {
 
   return (
     <Draggable draggableId={todo.id.toString()} index={index}>
-      {(provided) => (
+      {(provided, snapshot) => (
         <form
           ref={provided.innerRef}
           {...provided.dragHandleProps}
           {...provided.draggableProps}
           onSubmit={(e) => handleEdit(e, todo.id)}
-          className="flex hover:scale-105 transition duration-300 my-5 shadow-md shadow-black items-center w-72 h-12 bg-primary rounded-xl justify-between px-4 text-black"
+          className={`${
+            snapshot.isDragging ? "shadow-xl" : "shadow-md"
+          } flex hover:scale-105 transition duration-300 my-5 shadow-black items-center w-72 h-12 bg-primary rounded-xl justify-between px-4 text-black`}
         >
           {edit ? (
             <input
